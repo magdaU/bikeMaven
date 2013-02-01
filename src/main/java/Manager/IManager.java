@@ -5,6 +5,6 @@ public interface IManager <TEntity> {
 	public void dropTable();
 	public void delete();
 	public void insert();
-	public void update();
-	public void select();
+	public void update(String entity);
+	public TEntity select();
 }

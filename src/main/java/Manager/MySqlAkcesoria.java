@@ -3,6 +3,7 @@ package Manager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Akcesoria.Akcesoria;
@@ -21,11 +22,11 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 	
 	// Sekcja zapytañ
 	String sCreate = "CREATE TABLE akcesoria (id int auto_increment primary key, nazwa varchar(255), opis varchar(255), cena decimal (10.2))";
-	String sDrop = "";
-	String sDelete = "";
-	String sInsert = "";
-	String sUpdate = "";
-	String sSelect = "";
+	String sDrop = "DROP TABLE akcesoria";
+	String sDelete = "DELETE FROM akcesoria";
+	String sInsert = "INSERT INTO akcesoria values (NULL, 'pompka', 'Pompka do roweru', 10)";
+	String sUpdate = "UPDATE akcesoria SET nazwa = ?)";
+	String sSelect = "SELECT * FROM akcesoria";
 	
 	public MySqlAkcesoria ()
 	{
@@ -46,34 +47,80 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 		}
 	}
 	
+	public Connection getConnection()
+	{
+		return connection;
+	}
+	
 	public void createTable() {
-		// TODO Auto-generated method stub
+		try {
+			createTable.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	public void dropTable() {
-		// TODO Auto-generated method stub
+		try {
+			dropTable.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	public void delete() {
-		// TODO Auto-generated method stub
+		try {
+			delete.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	public void insert() {
-		// TODO Auto-generated method stub
+		try {
+			insert.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
-	public void update() {
-		// TODO Auto-generated method stub
+	public void update(String zmienna) {
+		try {
+			update.setString(1, zmienna);
+			update.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
-	public void select() {
-		// TODO Auto-generated method stub
+	public Akcesoria select() {
+		Akcesoria result = null;
+		try {
+			ResultSet rs = select.executeQuery();
+			while(rs.next())
+			{
+				result = new Akcesoria(rs.getInt("id"),
+						rs.getString("nazwa"),
+						rs.getString("opis"),
+						rs.getDouble("cena"));
+			}
+			
+			return result;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 		
 	}
-
 }

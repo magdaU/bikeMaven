@@ -3,7 +3,7 @@ package Manager;
 public class Connect {
 	
 	private String url="jdbc:mysql://192.168.1.101:3306/bike";
-	private String user = "root";
+	private String user = "magda";
 	private String password = "";
 	
 	public String getUrl() {
