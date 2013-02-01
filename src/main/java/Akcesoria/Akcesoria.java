@@ -1,6 +1,6 @@
 package Akcesoria;
 
-public class Akcesoria implements IAkcesoria {
+public class Akcesoria  implements IAkcesoria {
 	int id;
 	String nazwa;
 	String opis;
