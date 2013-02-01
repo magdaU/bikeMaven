@@ -15,17 +15,17 @@ public class Rower implements IRower {
 	}
 
 	public void dodajRower() {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	public void ustawCene() {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	public void ustawPromocje() {
-		// TODO Auto-generated method stub
+
 		
 	}
 	

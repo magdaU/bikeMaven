@@ -56,7 +56,6 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 		try {
 			createTable.execute();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -66,7 +65,6 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 		try {
 			dropTable.execute();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -76,7 +74,6 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 		try {
 			delete.execute();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -86,7 +83,6 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 		try {
 			insert.execute();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -97,7 +93,6 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 			update.setString(1, zmienna);
 			update.execute();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -117,7 +112,6 @@ public class MySqlAkcesoria implements IManager<Akcesoria> {
 			
 			return result;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}

@@ -22,11 +22,9 @@ public class Akcesoria  implements IAkcesoria {
 	}
 	
 	public void dodajAkcesoria() {
-		// TODO Auto-generated method stub
-		
+
 	}
 	public void ustawCene() {
-		// TODO Auto-generated method stub
 		
 	}
 }
